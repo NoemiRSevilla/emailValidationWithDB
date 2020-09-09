@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css.css') }}">
+</head>
+<body>
+    <div class="success"><h6>The email address you entered _____  is a VALID email address! Thank you!</h6></h1></div>
+    <div class="container-fluid">
+            <h1>Email Addresses Entered:e</h1>
+            <div class="container-fluid">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Created At:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for one_email in all_emails %}
+                            <th scope="row">{{one_email["id"]}}</th>
+                                <td>{{one_email["email"]}}</td>
+                                <td>{{one_email["created_at"]}}</td>
+                        </tr>
+                            {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+</body>
+</html>
